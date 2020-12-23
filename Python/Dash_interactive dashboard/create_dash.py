@@ -33,6 +33,7 @@ from dash.dependencies import Input, Output
 
 # Click
 import click
+import sys
 
 #%%
 
@@ -204,4 +205,26 @@ ethfig.show()
 
 fig = px.box(ageds, x="date", y="age_in_years")
 fig.show()
+# %%
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+app = JupyterDash('YourAppExample',external_stylesheets=external_stylesheets)
+
+app.layout = html.Div([
+    
+    html.H1(children='Data Quality',style={'textAlign':'center'}),
+    
+    dcc.Tabs(id="tabs", value='tab-1', children=[
+        dcc.Tab(label='Demographics', value='tab-1'),
+        dcc.Tab(label='Condition occurrence', value='tab-2'),
+        dcc.Tab(label='Device exposure',value='tab-3'),
+        dcc.Tab(label='Drug exposure',value='tab-4'),
+        dcc.Tab(label='Measurement',value='tab-5'),
+        dcc.Tab(label='Procedure occurrence',value='tab-6'),
+        dcc.Tab(label='Visit detail',value='tab-7'),
+        dcc.Tab(label='Other tables',value='tab-8')
+    ]),
+    html.Div(id='tabs-content')
+])
+app.run_server(mode='external')
 # %%
