@@ -186,12 +186,14 @@ totalpatfig = px.bar(person_counts, x="date", y="counts",text='counts')
 totalpatfig .update_traces(texttemplate='%{text:.2s}',textposition='outside')
 totalpatfig.show()
 
-# %%
+#%%
 gender_counts=gender_counts.sort_values(by=['percent'],ascending=True)
-genderfig = px.bar(gender_counts, x="date", y="counts", color="gender",text='percent')
+genderfig = px.bar(gender_counts, x="date", y="counts", color="gender",text='percent',width=600)
 genderfig.update_layout(barmode='group')
+genderfig.update_layout(legend=dict(orientation="h", yanchor="bottom",y=1.02,xanchor="right",x=1))
 genderfig.show()
 
+#%%
 race_counts=race_counts.sort_values(by=['percent'],ascending=True)
 racefig = px.bar(race_counts, x="date", y="counts", color="race",text='percent')
 racefig.update_layout(barmode='group')
@@ -201,10 +203,11 @@ racefig.show()
 eth_counts=eth_counts.sort_values(by=['percent'],ascending=True)
 ethfig = px.bar(eth_counts, x="date", y="counts", color="ethnicity",text='percent')
 ethfig.update_layout(barmode='group')
+ethfig.update_layout(legend=dict(orientation="h", yanchor="bottom",y=1.02,xanchor="right",x=1))
 ethfig.show()
 
-fig = px.box(ageds, x="date", y="age_in_years")
-fig.show()
+agefig = px.box(ageds, x="date", y="age_in_years")
+agefig.show()
 # %%
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -212,19 +215,77 @@ app = JupyterDash('YourAppExample',external_stylesheets=external_stylesheets)
 
 app.layout = html.Div([
     
-    html.H1(children='Data Quality',style={'textAlign':'center'}),
+    html.H1(children='Starr omop interactive data dashboard application',style={'textAlign':'center'}),
     
-    dcc.Tabs(id="tabs", value='tab-1', children=[
-        dcc.Tab(label='Demographics', value='tab-1'),
-        dcc.Tab(label='Condition occurrence', value='tab-2'),
-        dcc.Tab(label='Device exposure',value='tab-3'),
-        dcc.Tab(label='Drug exposure',value='tab-4'),
-        dcc.Tab(label='Measurement',value='tab-5'),
-        dcc.Tab(label='Procedure occurrence',value='tab-6'),
-        dcc.Tab(label='Visit detail',value='tab-7'),
-        dcc.Tab(label='Other tables',value='tab-8')
+    dcc.Tabs(id="tabs",children=[
+        dcc.Tab(label='Starr Omop general information', value='tab-1'),
+        dcc.Tab(label='Demographics of stanford omop population', value='tab-2'),
+        dcc.Tab(label='Condition occurrence', value='tab-3'),
+        dcc.Tab(label='Device exposure',value='tab-4'),
+        dcc.Tab(label='Drug exposure',value='tab-5'),
+        dcc.Tab(label='Measurement',value='tab-6'),
+        dcc.Tab(label='Procedure occurrence',value='tab-7'),
+        dcc.Tab(label='Visit detail',value='tab-8'),
+        dcc.Tab(label='Other tables',value='tab-9')
     ]),
     html.Div(id='tabs-content')
 ])
+
+@app.callback(Output('tabs-content', 'children'),
+              [Input('tabs', 'value')])
+
+def render_content(tab):
+    if tab == 'tab-1':
+        return html.Div([
+            
+            html.H4('Observation medical outcomes partnership common data model (OMOP CDM)'),
+            html.Div([
+                html.Label(['The OMOP Common Data Model allows for the systematic analysis of disparate observational databases. The concept behind this approach is to transform data contained within those databases into a common format (data model) as well as a common representation (terminologies, vocabularies, coding schemes), and then perform systematic analyses using a library of standard analytic routines that have been written based on the common format. More details about OHDSI and OMOP please refer ', html.A('link', href='https://www.ohdsi.org/')]),
+                html.Br()
+            ]),
+
+            html.H4('Starr Omop-observational medical outcomes partnership stanford research data repository'),
+            html.Div([
+                html.Label(['A new clinical data platform, which is first fully de-identified EHR data from Epic clarity in observational health data science informatics (OHDSI) observational medical outcomes partnership (OMOP) common model. More details about starr omop please refer: ', html.A('link', href='https://med.stanford.edu/starr-omop.html')]),
+                html.Br(),
+                html.Label(['Starr omop training tutorials: ', html.A('link', href='https://www.youtube.com/channel/UC6iGiAO1dKwuC2wOrxnKiNw')]),
+                html.Br(),
+                html.P('Starr omop office hour: Every other Wednesday 3-4pm')
+            ]),                
+                
+        ])
+    elif tab == 'tab-2':
+        return html.Div([
+            html.H3('Number of people'),
+            
+            dcc.Graph(id='total',
+                figure=totalpatfig
+            ),
+            
+            html.H3('Gender distribution'),
+            
+            dcc.Graph(id='gender',
+                figure=genderfig
+            ),
+            
+            html.H3('Race distribution'),
+            
+            dcc.Graph(id='race',
+                figure=racefig
+            ),
+            
+            html.H3('Ethnicity distribution'),
+            
+            dcc.Graph(id='eth',
+                figure=ethfig
+            ),
+            
+            html.H3('Age distribution'),
+            
+            dcc.Graph(id='age',
+                figure=agefig
+            ),
+            
+        ])    
 app.run_server(mode='external')
 # %%
