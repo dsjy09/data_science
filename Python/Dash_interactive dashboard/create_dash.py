@@ -7,10 +7,10 @@
 from collections import namedtuple
 from google.cloud import bigquery
 import pandas as pd
-import IPython
+#import IPython
 import re
-import matplotlib.pyplot as plt
 
+import matplotlib.pyplot as plt
 import plotly
 import chart_studio.plotly as py
 import plotly.graph_objs as go
@@ -35,8 +35,12 @@ import dash_table
 # Click
 import click
 import sys
-sys.path.append("/users/lingyaoy/Documents/starr-data-science/starr/evaluation")
-import dq_checks
+sys.path.append("/users/lingyaoy/Documents/starr-data-science/starr/jaden_ds_dev")
+#import dq_checks
+import create_stat
+import general_functions
+import data_visulization
+
 
 #%%
 
@@ -63,6 +67,7 @@ lst=[]
 if datasets:
     for dataset in datasets:  # API request(s)
         lst.append(format(dataset.dataset_id))
+        
 # %%
 prefix='starr_omop_cdm5_deid_1pcent_lite'
 num=-5
@@ -214,25 +219,9 @@ agefig = px.box(ageds, x="date", y="age_in_years")
 #agefig.show()
 
 # %%
-colnames=dq_checks.Generalfunc.getcolnames(cdm_project_id,cdm_dataset_id_list[-1])
+p=general_functions.BQ_generalfunc()
 
-# %%
-mylist=list(colnames.column_name)
-#dupcols=[i for i in set(mylist) if mylist.count(i) > 1]
-#dupcols.sort()
-cols=list(colnames.column_name.unique())
-cols.sort()
-
-# %%
-table_col=pd.DataFrame(columns=['column_name','tables'])
-
-for col in cols:
-    tables=list(colnames[colnames['column_name']==col].table_name)
-    tables_str=dq_checks.Generalfunc.joinlist(tables,',')
-    countds=pd.DataFrame([col,(tables_str)]).T
-    countds.columns=['column_name','tables']
-    table_col=table_col.append(countds)
-
+table_col=p.variable_map()
 
 # %%
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -279,7 +268,9 @@ def render_content(tab):
                 html.Br(),
                 html.P('Starr omop office hour: Every other Wednesday 3-3:30pm PST'),
                 html.Br(),
-                html.P('Starr omop Atlas office hour: Every Monday 10-10:50am PST')
+                html.P('Starr omop Atlas office hour: Every Monday 10-10:50am PST'),
+                html.Br(),
+                html.Label(['Atlas-stanford: ', html.A('link', href='https://ohdsi-atlas.stanford.edu/#/home')])
             ]),                
                 
         ])
