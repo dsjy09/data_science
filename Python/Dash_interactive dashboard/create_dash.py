@@ -30,10 +30,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 from jupyter_dash import JupyterDash
 from dash.dependencies import Input, Output
+import dash_table
 
 # Click
 import click
 import sys
+sys.path.append("/users/lingyaoy/Documents/starr-data-science/starr/evaluation")
+import dq_checks
 
 #%%
 
@@ -71,6 +74,7 @@ for i in lst:
 cdm_dataset_id_list=cdm_alldatasets[num:]
 n=len(cdm_dataset_id_list)
 cdm_dataset_id_list
+
 # %% [markdown]
 # ## Demographics
 
@@ -184,30 +188,52 @@ for i in range(0,n):
 #%%
 totalpatfig = px.bar(person_counts, x="date", y="counts",text='counts')
 totalpatfig .update_traces(texttemplate='%{text:.2s}',textposition='outside')
-totalpatfig.show()
+#totalpatfig.show()
 
 #%%
 gender_counts=gender_counts.sort_values(by=['percent'],ascending=True)
 genderfig = px.bar(gender_counts, x="date", y="counts", color="gender",text='percent',width=600)
 genderfig.update_layout(barmode='group')
 genderfig.update_layout(legend=dict(orientation="h", yanchor="bottom",y=1.02,xanchor="right",x=1))
-genderfig.show()
+#genderfig.show()
 
 #%%
 race_counts=race_counts.sort_values(by=['percent'],ascending=True)
 racefig = px.bar(race_counts, x="date", y="counts", color="race",text='percent')
 racefig.update_layout(barmode='group')
 racefig.update_layout(legend=dict(orientation="h", yanchor="bottom",y=1.02,xanchor="right",x=1))
-racefig.show()
+#racefig.show()
 
 eth_counts=eth_counts.sort_values(by=['percent'],ascending=True)
 ethfig = px.bar(eth_counts, x="date", y="counts", color="ethnicity",text='percent')
 ethfig.update_layout(barmode='group')
 ethfig.update_layout(legend=dict(orientation="h", yanchor="bottom",y=1.02,xanchor="right",x=1))
-ethfig.show()
+#ethfig.show()
 
 agefig = px.box(ageds, x="date", y="age_in_years")
-agefig.show()
+#agefig.show()
+
+# %%
+colnames=dq_checks.Generalfunc.getcolnames(cdm_project_id,cdm_dataset_id_list[-1])
+
+# %%
+mylist=list(colnames.column_name)
+#dupcols=[i for i in set(mylist) if mylist.count(i) > 1]
+#dupcols.sort()
+cols=list(colnames.column_name.unique())
+cols.sort()
+
+# %%
+table_col=pd.DataFrame(columns=['column_name','tables'])
+
+for col in cols:
+    tables=list(colnames[colnames['column_name']==col].table_name)
+    tables_str=dq_checks.Generalfunc.joinlist(tables,',')
+    countds=pd.DataFrame([col,(tables_str)]).T
+    countds.columns=['column_name','tables']
+    table_col=table_col.append(countds)
+
+
 # %%
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -219,6 +245,7 @@ app.layout = html.Div([
     
     dcc.Tabs(id="tabs",children=[
         dcc.Tab(label='Starr Omop general information', value='tab-1'),
+        dcc.Tab(label='Variable Mapping', value='tab-1a'),
         dcc.Tab(label='Demographics of stanford omop population', value='tab-2'),
         dcc.Tab(label='Condition occurrence', value='tab-3'),
         dcc.Tab(label='Device exposure',value='tab-4'),
@@ -250,9 +277,23 @@ def render_content(tab):
                 html.Br(),
                 html.Label(['Starr omop training tutorials: ', html.A('link', href='https://www.youtube.com/channel/UC6iGiAO1dKwuC2wOrxnKiNw')]),
                 html.Br(),
-                html.P('Starr omop office hour: Every other Wednesday 3-4pm')
+                html.P('Starr omop office hour: Every other Wednesday 3-3:30pm PST'),
+                html.Br(),
+                html.P('Starr omop Atlas office hour: Every Monday 10-10:50am PST')
             ]),                
                 
+        ])
+    elif tab == 'tab-1a':
+        return html.Div([
+            dash_table.DataTable(
+                id='table',
+                columns=[{"name": i, "id": i} 
+                        for i in table_col.columns],
+                data=table_col.to_dict('records'),
+                style_cell=dict(textAlign='left'),
+                style_header=dict(backgroundColor="paleturquoise"),
+                style_data=dict(backgroundColor="lavender")
+            )
         ])
     elif tab == 'tab-2':
         return html.Div([
