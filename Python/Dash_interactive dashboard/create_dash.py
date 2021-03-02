@@ -35,11 +35,8 @@ import dash_table
 # Click
 import click
 import sys
-sys.path.append("/users/lingyaoy/Documents/starr-data-science/starr/jaden_ds_dev")
-#import dq_checks
-import create_stat
-import general_functions
-import data_visulization
+#Need to do pip install -e under starr-data-science in order to use it
+from starr import *
 
 
 #%%
@@ -219,7 +216,7 @@ agefig = px.box(ageds, x="date", y="age_in_years")
 #agefig.show()
 
 # %%
-p=general_functions.BQ_generalfunc()
+p=BqGeneralFunc()
 
 table_col=p.variable_map()
 
