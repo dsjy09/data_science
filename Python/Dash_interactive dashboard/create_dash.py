@@ -36,8 +36,10 @@ import dash_table
 import click
 import sys
 #Need to do pip install -e under starr-data-science in order to use it
-from starr import *
-
+#from starr import *
+sys.path.append('/Users/lingyaoy/Documents/starr-data-science/starr/datachecks')
+import utils
+import create_stat
 
 #%%
 
@@ -192,14 +194,12 @@ totalpatfig = px.bar(person_counts, x="date", y="counts",text='counts')
 totalpatfig .update_traces(texttemplate='%{text:.2s}',textposition='outside')
 #totalpatfig.show()
 
-#%%
 gender_counts=gender_counts.sort_values(by=['percent'],ascending=True)
 genderfig = px.bar(gender_counts, x="date", y="counts", color="gender",text='percent',width=600)
 genderfig.update_layout(barmode='group')
 genderfig.update_layout(legend=dict(orientation="h", yanchor="bottom",y=1.02,xanchor="right",x=1))
 #genderfig.show()
 
-#%%
 race_counts=race_counts.sort_values(by=['percent'],ascending=True)
 racefig = px.bar(race_counts, x="date", y="counts", color="race",text='percent')
 racefig.update_layout(barmode='group')
@@ -216,7 +216,7 @@ agefig = px.box(ageds, x="date", y="age_in_years")
 #agefig.show()
 
 # %%
-p=BqGeneralFunc()
+p=utils.BqGeneralFunc()
 
 table_col=p.variable_map()
 
@@ -226,13 +226,15 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = JupyterDash('YourAppExample',external_stylesheets=external_stylesheets)
 
 app.layout = html.Div([
-    
-    html.H1(children='Starr omop interactive data dashboard application',style={'textAlign':'center'}),
+
+    html.Div(html.Img(src=app.get_asset_url('stanford.png'),style={'height':'12%', 'width':'12%'})),
+
+    html.H1('Starr omop interactive data dashboard',style={'textAlign':'center'}),
     
     dcc.Tabs(id="tabs",children=[
-        dcc.Tab(label='Starr Omop general information', value='tab-1'),
+        dcc.Tab(label='General Information', value='tab-1'),
         dcc.Tab(label='Variable Mapping', value='tab-1a'),
-        dcc.Tab(label='Demographics of stanford omop population', value='tab-2'),
+        dcc.Tab(label='Demographics', value='tab-2'),
         dcc.Tab(label='Condition occurrence', value='tab-3'),
         dcc.Tab(label='Device exposure',value='tab-4'),
         dcc.Tab(label='Drug exposure',value='tab-5'),
@@ -267,9 +269,10 @@ def render_content(tab):
                 html.Br(),
                 html.P('Starr omop Atlas office hour: Every Monday 10-10:50am PST'),
                 html.Br(),
+                html.Label(['Google Question Form: ', html.A('link', href='http://tiny.cc/STARR_OMOPOfficeHours')]),
+                html.Br(),
                 html.Label(['Atlas-stanford: ', html.A('link', href='https://ohdsi-atlas.stanford.edu/#/home')])
-            ]),                
-                
+            ]),     
         ])
     elif tab == 'tab-1a':
         return html.Div([
