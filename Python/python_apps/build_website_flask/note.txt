@@ -1,0 +1,15 @@
+#install virtual enviroment
+
+pip install virtualenv
+
+#test whether the virtual enviroment works
+
+virtual/bin/python 
+
+# Install flask in the clean virual enviroment
+
+virtual/bin/pip install flask
+
+# Run the build website python script using clean virtual enviroment
+
+virtual/bin/python /Users/lingyaoy/Documents/data_science/Python/python_apps/build_website/Website_Demo/build_website.py
