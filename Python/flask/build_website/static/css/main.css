@@ -1,9 +1,7 @@
-/*
- * Formatting the header area
- */
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Caveat&family=Dancing+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap");
 
 /***Header section***/
 header {
@@ -144,6 +142,19 @@ footer {
   z-index:-1;
 }
 
+/***CSS shared across multiple pages***/
+.quoteh1 {
+  font-size:32px;
+  color:white;
+  text-align: center;
+  font-family: 'Borel', cursive;
+  font-family: 'Caveat', cursive;
+  font-family: 'Dancing Script', cursive;
+  margin-top:2rem;
+  margin-bottom:2rem;
+  text-align: center;
+}
+
 /*
  * Center the body content
  */
@@ -177,10 +188,10 @@ h3 {
 
 h1.handwrite {
   font-size:40px;
-  color:black;
+  color:white;
   text-align: center;
   font-family: 'Borel', cursive;
-  margin-top:3rem;
+  margin-top:2rem;
 }
 
 .travelmap {
@@ -188,16 +199,15 @@ h1.handwrite {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
   overflow:hidden;
 }
 
 .map {
   border-radius: 10%;
-  width: 40rem;
-  height: 26rem;
-  padding: 15px;
+  width: 42rem;
+  height: 25rem;
 }
 
 .travelpic {
@@ -206,12 +216,12 @@ h1.handwrite {
   justify-content: space-between;
   margin-top: 1rem;
   padding-top: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 40px;
+  padding-right: 80px;
 }
 
 .travelpic h2{
-  font-size:40px;
+  font-size:45px;
   color:black;
   font-family: 'Borel', cursive;
   font-family: 'Caveat', cursive;
@@ -220,24 +230,25 @@ h1.handwrite {
 }
 
 .travelpic h3{
-  font-size:30px;
+  font-size:28px;
   color:black;
   font-family: 'Borel', cursive;
   font-family: 'Caveat', cursive;
   font-family: 'Dancing Script', cursive;
   margin-top:2rem;
-  text-align: left;
 }
 
 .travelpic img {
   width:12rem;
   height:11rem;
   border-radius: 20%;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
 h2.handwrite {
   font-size:30px;
-  color:black;
+  color:white;
   text-align: center;
   font-family: 'Borel', cursive;
   margin-top: 2rem;
@@ -247,20 +258,28 @@ h2.handwrite {
     display: block;
 }
 
+/* filter button */
+
 .filter-buttons {
   margin-top: 5px;
-  padding-left:50px;
+  padding-left:80px;
+  padding-right:80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-button {
-  display: inline-block;
   border: none;
   outline: none;
   padding: 8px 16px;
   background-color: white;
   cursor: pointer;
-  font-size: 19px;
+  font-size: 17px;
   border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.8);
+  margin:5px; 
 }
 
 .filter-button:hover {
@@ -272,13 +291,19 @@ h2.handwrite {
   color: white;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Style the grid container for images */
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
-  grid-gap: 20px; /* Adjust the gap between grid items */
-  padding-left: 50px;
-  padding-right:50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 /* Content */ 
@@ -288,20 +313,22 @@ h2.handwrite {
   border-radius: 10px;
   position:relative;
   overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
 .grid-item img {
   border-radius: 10px;
-  width:100%;
-  height:230px;
+  width:370px;
+  height:250px;
 }
 
 .overlay {
 position: absolute;
 top: 0;
 left: 0;
-width: 100%;
-height: 100%;
+width:100%;
+height:100%;
 background-color: rgba(0, 0, 0, 0.5);
 opacity: 0;
 display: flex;
@@ -348,6 +375,7 @@ align-items: center;
   transform: translate(-50%, -50%);
   border:solid 2px black;
   text-align: left;
+  z-index: 2;
 }
 
 .close-popup {
@@ -361,21 +389,11 @@ align-items: center;
   font-size: 18px;
 }
 
-.hidden {
-  display: none;
-}
-
 /***Work Page***/
 
 /**Timeline Section**/
-
-.jobtimeline h1 {
-  color:white;
-  text-align: center;
-  margin-top:2rem;
-  margin-bottom: 2rem;
-  margin-left: 3rem;
-  font-size: 30px;
+.jobtimeline {
+  margin-top: 6rem;
 }
 
 .jobtitle {
@@ -598,14 +616,14 @@ align-items: center;
 
 /**Skills Section**/
 
-
 .skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   padding-left: 80px;
   padding-right: 80px;
+  margin-top: 1rem;
 }
 
 .skills .card{
@@ -678,22 +696,98 @@ align-items: center;
   text-align: center;
 }
 
-.skills .card .face.face2 .content a{
-  margin: 15px 0 0;
-  display:  inline-block;
-  text-decoration: none;
-  font-weight: 900;
-  color: #333;
-  padding: 5px;
-  border: 1px solid #333;
+/** Note section **/
+
+.notelist {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+padding-left: 50px;
+padding-right: 50px;
 }
 
-.skills .card .face.face2 .content a:hover{
-  background: #333;
-  color: #fff;
+.note {
+height: 29rem;
+width: 22rem;
+background-color: white;
+border-radius: 0.25rem;
+display: flex;
+flex-wrap: wrap;
+justify-items: center;
+overflow: scroll;
+background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px),#66afe1 0 1.2rem) right bottom /100% 100%,linear-gradient(red 0 0) 30px 0/2px 100% #fff;
+background-repeat: no-repeat;
+line-height: 1.2rem;
+-webkit-mask:radial-gradient(circle .8rem at 2px 50%,#0000 98%,#000)0 0/100% 2.4rem;
 }
 
-/** images and videos **/
+.note img {
+width:18rem;
+height:10rem;
+background-color: #000;
+margin-top: 1rem;
+margin-bottom: 0;
+}
+
+.note_content {
+align-items: center;
+padding-left: 2.1rem;
+margin-top: 0;
+}
+
+h2.note_title {
+font-size: 1.3em;
+margin-top: 10px;
+}
+
+/*** Blog page ***/
+
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding-left: 80px;
+  padding-right: 80px;
+  overflow:hidden;
+}
+
+.post {
+  width:20rem;
+  height: fit-content;
+  padding: 1rem 1rem 2rem;
+  background: #f8f3e8;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  margin-top: 3rem;
+}
+
+.post > img {
+  width: 20rem;
+  height: auto;
+  aspect-ratio: 600/300;
+}
+
+.post > h2 {
+  margin-top: 1rem;
+  font-family: "Kalam", cursive;
+  font-weight: normal;
+  font-size: 2.2rem;
+  color: #4a4a7d;
+  text-align: center;
+}
+
+.post > p {
+  font-family: "Kalam", cursive;
+  font-size: 1.4rem;
+  color: #5e5e89;
+  text-align: center;
+}
+
+/*** Video page ***/
 
 .img-video-container {
   float: left;

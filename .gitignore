@@ -13,3 +13,4 @@ Python/python_apps/build_website_flask/Website_Demo/static/image/swiss_mountains
 .venv
 Python/flask/.venv
 get-pip.py
+Python/flask/__pycache__/app.cpython-311.pyc
