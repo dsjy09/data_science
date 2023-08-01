@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask website</title>
+        <link rel="stylesheet" href="../static/css/normalize.css"/>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/main.css">        
+      </head>
+    <body>
+        <header class="header" id="header">
+
+            <h1 class="logo">Jaden's personal website</h1>
+            <p>
+                A free, fully responsive personal website designed by Jaden using Flask, HTML5, CSS3
+            </p>
+            <!-- <button class="openmenu-btn">☰Menu</button> -->
+            <button class="openmenu" id="openBtn" onclick="openNav()">☰Menu</button>  
+        </header>
+        
+        <nav id="menu">
+          <ul class="links">
+            <button class="closemenu" id="closeBtn" onclick="closeNav()">&times;</button>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <button class="dropdown-btn">Fun for life 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <ul class="dropdown-container">
+              <li><a href="travel.html">Travel</a></li>
+              <li><a href="videos.html">Video</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="swiss.html">Test</a></li>
+            </ul>
+            <li><a href="map.html">Contact</a></li>        
+          </ul>
+        </nav>
+                      
+        <div>
+            {%block content%}
+            {%endblock%}
+        </div> 
+        
+        <footer>
+            <p>&copy; 2023 Jaden Yang. All rights reserved.</p>
+        </footer>
+
+        <script src="../static/js/nav_dropdown.js"></script>
+        <script src="../static/js/open_sidebar.js"></script>
+
+    </body>
+</html>

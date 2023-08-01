@@ -1,0 +1,101 @@
+{%extends "index.html"%}
+{%block content%}
+<head>
+  <title>travel</title>
+  <link rel="stylesheet" href="../static/css/normalize.css"/>
+  <link rel="stylesheet" href="../static/css/main.css">   
+</head>
+<body>
+
+  <!-- MAIN (Center website) -->
+
+  <h1 class="handwrite"> Travel and see the world</h1>
+
+  <div class="travelmap">       
+
+    <img class='map' src="static/images/travel/map.png" alt="Travel Map">
+
+    <div class="travelpic">
+      <h2>Bon voyage</h2>
+      <img class='travelword' src='../static/images/travel/other/pexels-element-digital-1051073.jpg'>
+      <img class='travelword' src='../static/images/travel/other/pexels-leah-kelley-185933.jpg'>
+      <img class='travelword' src='../static/images/travel/other/pexels-nubia-navarro-(nubikini)-386009.jpg'>
+      <img class='travelword' src='../static/images/travel/other/pexels-pixabay-413960.jpg'>
+      <h3>We wonder for distraction, but we travel for fulfilment --Hilaire Belloc</h2>
+    </div>
+    
+  </div>
+
+  <h2 class="handwrite">Photo Gallery</h2>
+
+  <div class="filter-buttons">
+    <button class="filter-button" data-filter="all">All</button>
+    <button class="filter-button" data-filter="france">France</button>
+    <button class="filter-button" data-filter="spain">Spain</button>
+    <button class="filter-button" data-filter="swiss">Switherland</button>
+    <button class="filter-button" data-filter="turkey">Turkey</button>       
+    <!-- Add more filter buttons as needed -->
+  </div>
+
+  <div class="grid-container">
+
+    <div class="grid-item swiss">
+      <img src="static/images/travel/switherland/swiss_mountains.JPG" alt="Swiss Mountains">
+      <div class="overlay">
+        <a class="view-button" id="modalBtn"><strong>swiss mountains</strong> | read more</a>
+      </div>
+    </div>
+
+    <div class="grid-item swiss">
+      <img src="static/images/travel/switherland/bern.jpeg" alt="Bern">
+      <div class="overlay">
+        <a class="view-button" id="modalBtn"><strong>bern</strong> | read more</a>
+      </div>
+    </div>
+
+    <div class="grid-item swiss">
+      <img src="static/images/travel/switherland/geneva.jpeg" alt="Geneva">
+      <div class="overlay">
+        <a class="view-button" id="modalBtn"><strong>geneva</strong> | read more</a>
+      </div>
+    </div>
+
+    <div class="grid-item swiss">
+      <img src="static/images/travel/switherland/interlaken.jpeg" alt="Interlaken">
+      <div class="overlay">
+        <a class="view-button" id="modalBtn"><strong>interlaken</strong> | read more</a>
+      </div>
+    </div>
+
+    <div class="grid-item swiss">
+      <img src="static/images/travel/switherland/lucern.jpeg" alt="Lucern">
+      <div class="overlay">
+        <a class="view-button" id="modalBtn"><strong>lucern</strong> | read more</a>
+      </div>
+    </div>
+
+    <!-- Spain -->
+
+    <div class="grid-item spain">
+      <img src="static/images/travel/spain/barcelona.jpeg" alt="Barcelona">
+      <div class="overlay">
+        <a class="view-button" href="#video1" onclick="openPopup('video1')"><strong>barcelona</strong> | read more</a>
+      </div>
+      <div class="popup-content" id="video1">
+        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
+        <video class="videos" center autoplay muted loop>
+            <source src="static/videos/travel/Barcelona.mp4" type="video/mp4">
+        </video>
+        <button class="close-popup" onclick="closePopup('video1')">Close</button>
+      </div>   
+
+
+  </div>
+
+  <script src="../static/js/filter_buttons.js"></script>
+  <script src="../static/js/popup_window.js"></script>
+  
+</body>
+
+{%endblock%}

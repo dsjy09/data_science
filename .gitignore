@@ -12,3 +12,4 @@ Python/python_apps/build_website_flask/virtual/bin/activate
 Python/python_apps/build_website_flask/Website_Demo/static/image/swiss_mountains.JPG
 .venv
 Python/flask/.venv
+get-pip.py
