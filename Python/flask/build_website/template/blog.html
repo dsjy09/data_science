@@ -1,11 +1,25 @@
 {%extends "index.html"%}
 {%block content%}
-<head>
-  <title>blog</title>
-  <link rel="stylesheet" href="../static/css/normalize.css"/>
-  <link rel="stylesheet" href="../static/css/main.css">    
-</head>
 <style>
+
+.media-list {
+  position: relative;
+  font-size: 28px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.media-list li {
+  position: relative; 
+  display: inline-block;
+  padding: 0 20px 0 20px;
+  margin: 0;
+  color: black;
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+}
 
 </style>
   <body>
@@ -15,9 +29,19 @@
     <div class="blog">
  
       <div class="post" style="transform:rotate(-0.2425899672303995deg);">
-        <img src="https://picsum.photos/id/20/600/300"/>
-        <h2>Card Title</h2>
-        <p>read more</p>
+        <img src="../static/images/blog/indian_wells.jpeg"/>
+        <h2>Indian Wells BNP Open</h2>
+        <ul class="media-list">
+          <li>
+            <a href="static/videos/travel/spain/sevilla.mp4" target=_blank class="media-icon"><i class="fa fa-image" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://youtu.be/s6zR2T9vn2c" target=_blank class="media-icon"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html" target=_blank class="media-icon"><i class="fa-brands fa-blogger"></i></a>
+          </li>
+        </ul>
       </div>
       <div class="post" style="transform:rotate(2.382090039306492deg);">
         <img src="https://picsum.photos/id/40/600/300"/>

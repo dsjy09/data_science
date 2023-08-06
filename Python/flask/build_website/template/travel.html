@@ -9,7 +9,7 @@
 
   <!-- MAIN (Center website) -->
 
-  <h1 class="handwrite"> Travel and see the world</h1>
+  <h1 class="handwrite"> Travel and see the world in my unique way</h1>
 
   <div class="travelmap">       
 
@@ -39,7 +39,8 @@
     <button class="filter-button" data-filter="scotland">Scotland</button>
     <button class="filter-button" data-filter="spain">Spain</button>
     <button class="filter-button" data-filter="swiss">Switherland</button>
-    <button class="filter-button" data-filter="turkey">Turkey</button>       
+    <button class="filter-button" data-filter="turkey">Turkey</button>
+    <button class="filter-button" data-filter="usa">USA</button>         
     <!-- Add more filter buttons as needed -->
   </div>
 
@@ -184,8 +185,8 @@
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="sevilla">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
-        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
+        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html" target=_blank>Travel Blog</a></p>
+        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400" target=_blank>here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/spain/sevilla.mp4" type="video/mp4">
         </video>
@@ -348,6 +349,24 @@
             <source src="static/videos/travel/czechia/prague.mp4" type="video/mp4">
         </video>
         <button class="close-popup" onclick="closePopup('prague')">Close</button>
+      </div> 
+    </div>
+
+    <!-- USA -->
+
+    <div class="grid-item usa">
+      <img src="static/images/travel/usa/alaska.jpeg" alt="alaska">
+      <div class="overlay">
+        <a class="view-button" href="#alaska" onclick="openPopup('alaska')"><strong>alaska</strong> | read more</a>
+      </div>
+      <!-- popup window content -->
+      <div class="popup-content" id="alaska">
+        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
+        <video class="videos" center autoplay muted loop>
+            <source src="static/videos/travel/usa/alaska.mp4" type="video/mp4">
+        </video>
+        <button class="close-popup" onclick="closePopup('alaska')">Close</button>
       </div> 
     </div>
 
