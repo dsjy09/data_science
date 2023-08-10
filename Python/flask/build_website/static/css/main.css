@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Borel&family=Caveat&family=Dancing+Script&family=Kalam:wght@300&family=Lobster&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Caveat&family=Dancing+Script&family=Kalam:wght@300&family=Lobster&family=Pacifico&family=Roboto+Slab:wght@300&family=Open+Sans&family=Nunito&display=swap');
 
 /***Header section***/
 header {
@@ -34,12 +32,6 @@ header {
   margin-top: 2rem;
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards; /* Apply the fadeIn animation */
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1; /* Gradually increase opacity to 1 */
-  }
 }
 
 .openmenu {
@@ -193,6 +185,60 @@ h3 {
   text-align: center;
   letter-spacing: -1px;
   color: #999;
+}
+
+/*** Home page ***/
+
+.aboutsite, .aboutme {
+  padding: 1rem;
+  margin-bottom: 1rem; /* Adjust margin to control space between sections */
+  margin-top: 3rem;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.section-content {
+  display: flex; /* Use flexbox to align image and text side by side */
+  align-items: center; /* Center items vertically */
+  color:white;
+  line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.homeimg {
+  width: 32%; /* Adjust the width of the image as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 2rem; /* Add space between image and text */
+  border-radius: 10px;
+}
+
+.text-container {
+  flex: 1;
+  height: auto; /* Set the height for the paragraphs to match the image */
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.small-text {
+  font-size: large; /* Set the font size for small text */
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.large-text {
+  font-size: x-large; /* Set the font size for large text */
+  line-height: 1.6;
+  margin-top:0;
+  margin-bottom: 2rem;
+}
+
+.chinese-text {
+  font-size:17px;
+  color: rgb(5, 49, 99);
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 /*** Travel page ***/
@@ -785,14 +831,14 @@ margin-top: 10px;
 .post > img {
   width: 20rem;
   height: auto;
-  aspect-ratio: 600/300;
+  aspect-ratio: 600/360;
 }
 
 .post > h2 {
   margin-top: 1rem;
   font-family: "Kalam", cursive;
   font-weight: normal;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #4a4a7d;
   text-align: center;
 }
@@ -821,6 +867,189 @@ margin-top: 10px;
   color: black;
   cursor: pointer; 
   transition: all .2s ease-in-out;
+}
+
+/*** Contact page ***/
+
+.contact-header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  font: 300 60px 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.contact {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  overflow:hidden;
+}
+
+.message {
+
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:700px;
+  margin-left:0;
+  margin-right: 5rem;
+
+}
+
+label {
+  font-family: 'Oswald', sans-serif;
+  font-size:20px;
+}
+
+input[type=text], select, textarea {
+  font-family: 'Oswald', sans-serif;
+  font-size:20px;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=send] {
+  background-color: #8358b2;
+  color: white;
+  padding: 12px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width:35px;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=send]:hover {
+  background-color: #bea9d4;
+}
+
+.follow {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width:300px;
+  margin-top: 0;
+  height:300px;
+  padding:1rem;
+}
+
+.follow h3 {
+  color:black;
+  font-size: 25px;
+  text-align:center;
+}
+
+/* Social Media Icons */
+.social-media-list {
+  position: relative;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.social-media-list li a {
+  color: #fff;
+}
+
+.social-media-list li {
+  position: relative; 
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 10px 3px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgb(27,27,27);
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 0 1px #fff;
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+  background-color: #fff; 
+}
+
+.social-media-list li:hover:after {
+  opacity: 1;  
+  transform: scale(1.12);
+  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
+
+.social-media-list li:hover a {
+  color: #000;
+}
+
+.copyright {
+  font: 200 14px 'Oswald', sans-serif;
+  color: #555;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+
+
+/* Begin Media Queries*/
+@media screen and (max-width: 850px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .direct-contact-container, .form-horizontal {
+    margin: 0 auto;
+  }  
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 300px;
+  }    
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+/*** Animation functions ***/
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Gradually increase opacity to 1 */
+  }
 }
 
 /*** Video page ***/

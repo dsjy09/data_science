@@ -1,73 +1,9 @@
 {%extends "index.html"%}
 {%block content%}
 <head>
-  <title>home</title>
-  <link rel="stylesheet" href="../static/css/normalize.css"/>
-  <link rel="stylesheet" href="../static/css/main.css">       
+  <title>home</title>     
 </head>
 <style>
-
-section {
-  padding: 1rem;
-  margin-bottom: 1rem; /* Adjust margin to control space between sections */
-  margin-top: 3rem;
-  padding-left: 80px;
-  padding-right: 80px;
-}
-
-.section-content {
-  display: flex; /* Use flexbox to align image and text side by side */
-  align-items: center; /* Center items vertically */
-  color:white;
-  line-height: 1.6; /* Adjust line height for better readability */
-}
-
-h2 {
-  font-size: 1.2em;
-  margin-top: 40px;
-  text-align: left;
-  letter-spacing: -2px;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  color: gray;
-  font-size:large;
-}
-
-img {
-  width: 420px; /* Adjust the width of the image as needed */
-  height: 320px; /* Maintain aspect ratio */
-  margin-right: 2rem; /* Add space between image and text */
-  border-radius: 10px;
-}
-
-img {
-  width: 32%; /* Adjust the width of the image as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 2rem; /* Add space between image and text */
-  border-radius: 10px;
-}
-
-.text-container {
-  flex: 1;
-  height: auto; /* Set the height for the paragraphs to match the image */
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
-}
-
-.small-text {
-  font-size: 18px; /* Set the font size for small text */
-  line-height: 1.6;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.large-text {
-  font-size: x-large; /* Set the font size for large text */
-  line-height: 1.6;
-  margin-top:0;
-  margin-bottom: 2rem;
-}
-
 </style>
 <body>
 
@@ -75,7 +11,7 @@ img {
 
       <div class="section-content">
 
-          <img src="static/images/about/laptop.jpg" alt="laptop">
+          <img class='homeimg' src="static/images/about/laptop.jpg" alt="laptop">
 
           <div class="text-container">
 
@@ -86,8 +22,8 @@ img {
             </p>
             <br>
             <p class="small-text">
-              I really hope it will be a long-term platform where I will not only talk about work and projects I did before but also I could enjoy creativity, learn new things, store memories,
-              share, write, be organized and keep myself motivated. It would be somewhere I could always come back and 
+              I really hope this will be a long-term platform where I will not only talk about work and projects I did before but also I could enjoy creativity, learn new things, store memories,
+              share, write, be organized and keep myself motivated. I hope to keep it evolving as I learn. It would be somewhere I could always come back and 
               look back what happened in life and be thankful.                   
             </p>
             <br>
@@ -102,7 +38,7 @@ img {
 
       <div class="section-content">
 
-          <img src="static/images/about/avatar.jpg" alt="avatar">
+          <img class='homeimg' src="static/images/about/avatar.jpg" alt="avatar">
 
           <div class="text-container">
 
@@ -114,14 +50,22 @@ img {
               <br>
 
               <p class="small-text">
-                  During my career, I have played different roles as data analyst, data scientist, data engineer, ML engineer, MLOps and web app developer. 
-                  I did projects in data science, machine learning, data analyses, data visualization, web apps, api endpoint development, python package. 
-                  I am also curious in a lot of areas and eager to learn new technologies and skills.
+                  I have played different roles as data analyst, data scientist, data engineer, ML engineer, MLOps engineer and web app developer during my career. 
+                  I did projects in data science, machine learning, building dashboards, data visualization, web apps, api endpoint development, python package. 
+                  I am also curious in a lot of areas and want to find areas I am passionate about.
               </p>
               <br>
                   
               <p class="small-text">
                   Outside work, I enjoy travelling, making deserts, editing videos, taking photos, playing and watching tennis, hanging out with families and friends. 
+              </p>
+              <br>
+                  
+              <p class="small-text">
+                  We only live once and enjoy it as much as we can. 
+              </p>
+              <p class="chinese-text">
+                  无论是我的明天要去哪里，而至少快乐伤心我自己决定。-五月天《人生海海》
               </p>
           </div>
       </div>        

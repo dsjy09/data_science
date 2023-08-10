@@ -20,4 +20,20 @@ function closePopup(jobid) {
     const popup = document.getElementById(jobid);
     popup.style.display = 'none';
 }
-  
+ 
+window.addEventListener('resize', () => {
+  setPopupSize();
+});
+
+function setPopupSize() {
+  const popupContent = document.querySelector('.popup-content');
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const maxPopupWidth = screenWidth * 0.9; // 90% of screen width
+  const maxPopupHeight = screenHeight * 0.9; // 90% of screen height
+  popupContent.style.maxWidth = maxPopupWidth + 'px';
+  popupContent.style.maxHeight = maxPopupHeight + 'px';
+}
+
+// Set initial size on page load
+setPopupSize();
