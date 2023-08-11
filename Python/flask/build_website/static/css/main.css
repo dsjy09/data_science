@@ -806,6 +806,11 @@ font-size: 1.3em;
 margin-top: 10px;
 }
 
+.note_text {
+  text-decoration: none;
+  color:black;
+}
+
 /*** Blog page ***/
 
 .blog {

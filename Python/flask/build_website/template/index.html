@@ -15,7 +15,7 @@
             <button class="openmenu" id="openBtn" onclick="openNav()">☰Menu</button>  
         </header>
         
-        <nav id="menu">
+        <!-- <nav id="menu">
           <ul class="links">
             <button class="closemenu" id="closeBtn" onclick="closeNav()">&times;</button>
             <li><a href="home.html">Home</a></li>
@@ -29,6 +29,22 @@
               <li><a href="swiss.html">Test</a></li>
             </ul>
             <li><a href="contact.html">Contact</a></li>        
+          </ul>
+        </nav> -->
+
+        <nav id="menu">
+          <ul class="links">
+            <button class="closemenu" id="closeBtn" onclick="closeNav()">&times;</button>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('work')}}">Work</a></li>
+            <button class="dropdown-btn">Fun for life 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <ul class="dropdown-container">
+            <li><a href="{{url_for('travel')}}">Travel</a></li>
+            <li><a href="{{url_for('blog')}}">Blog</a></li> 
+            </ul>
+            <li><a href="{{url_for('contact')}}">Contact</a></li>        
           </ul>
         </nav>
                       
