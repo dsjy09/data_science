@@ -4,6 +4,9 @@
   <title>work</title>
 </head>
 <style>
+  .tmp-text {
+    margin-left:15px;
+  }
 </style>
 <body>
 
@@ -195,6 +198,7 @@
               <div class="content">
                   <p>Airflow</p>
                   <p>DBT</p>
+                  <p>Spark</p>
               </div>
           </div>
       </div>
@@ -239,6 +243,7 @@
             <div class="content">
                 <p>Github</p>
                 <p>Git</p>
+                <p>Bitbucket</p>
             </div>
         </div>
       </div>
@@ -253,7 +258,7 @@
             <div class="content">
                 <p>Kubenetes</p>
                 <p>Docker</p>
-                <p>Spark</p>
+                <p>Terraform</p>
             </div>
         </div>
       </div>
@@ -328,6 +333,7 @@
             <div class="content">
                 <p>CircieCI</p>
                 <p>TravisCI</p>
+                <p>Jenkins</p>
             </div>
         </div>
       </div>
@@ -366,7 +372,10 @@
               <p>Why is MLOps important? <a href="https://medium.com/@hany-hossny/introduction-to-mlops-1-29c9c025715f" target=_blank><i class="fa fa-medium" aria-hidden="true" class="media-icon"></i></a></p>
               <p>Comprehensive Guide to MLOps <a href="https://medium.com/@hany-hossny/introduction-to-mlops-1-29c9c025715f" target=_blank><i class="fa fa-medium" aria-hidden="true" class="media-icon"></i></a></p>
               <p>Tools: GCP-VertexAI, AWS-Sagemaker pipeline, Kubeflow, MLflow</p>
-              <p>Flask output:{{outputs}}</p>
+              <p>Top 10 artiles on medium based on <i class="fa fa-hands-clapping" aria-hidden="true" class="media-icon"></i></p>
+              {% for item1, item2 in outputs %}
+              <p class="tmp-text">{{ item1}} | {{ item2}}</p>
+              {% endfor %}
             </div>
           </div>
         </div>

@@ -1,14 +1,7 @@
 ## This code is used to build a personal website using Flask in python
 
 from flask import Flask, render_template
-
-import plotly
-import plotly.graph_objs as go
-
-import pandas as pd
-import numpy as np
-import json
-import plotly.express as px
+from functions import *
 
 app=Flask(__name__,template_folder='template')
 
@@ -18,8 +11,8 @@ def home():
 
 @app.route('/work')
 def work():
-    output='give a try'
-    return render_template("work.html", outputs=output)
+    outputs=medium_articles()
+    return render_template("work.html", outputs=outputs)
 
 @app.route('/travel')
 def travel():
