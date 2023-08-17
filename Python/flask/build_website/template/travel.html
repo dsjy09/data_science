@@ -6,11 +6,22 @@
 <style>
   /* Add responsive styles as needed */
 @media (max-width: 768px) {
-  .popup-content {
+  .popup-content, .videos {
     max-width: 80%; /* Adjust the size for smaller screens */
-    max-height: 80%;
+    max-height: 60%;
   }
 }
+.view-button-nocontent {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
 </style>
 <body>
 
@@ -58,12 +69,11 @@
     <div class="grid-item swiss">
       <img src="static/images/travel/switherland/swiss_mountains.JPG" alt="swiss mountains">
       <div class="overlay">
-        <a class="view-button" href="#swissmountain" onclick="openPopup('swissmountain')"><strong>Swiss Mountains</strong> | read more</a>
+        <a class="view-button" href="#swissmountain" onclick="openPopup('swissmountain')"><strong>Swiss Mountains</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="swissmountain">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
-        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
+        <p>read travel blog <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">here</a> and watch travel video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/switherland/swissmountain.mp4" type="video/mp4">
         </video>
@@ -74,11 +84,11 @@
     <div class="grid-item swiss">
       <img src="static/images/travel/switherland/bern.jpeg" alt="bern">
       <div class="overlay">
-        <a class="view-button" href="#bern" onclick="openPopup('bern')"><strong>Bern</strong> | read more</a>
+        <a class="view-button" href="#bern" onclick="openPopup('bern')"><strong>Bern</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="bern">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/switherland/bern.mp4" type="video/mp4">
@@ -90,11 +100,11 @@
     <div class="grid-item swiss">
       <img src="static/images/travel/switherland/geneva.jpeg" alt="geneva">
       <div class="overlay">
-        <a class="view-button" href="#geneva" onclick="openPopup('geneva')"><strong>Geneva</strong> | read more</a>
+        <a class="view-button" href="#geneva" onclick="openPopup('geneva')"><strong>Geneva</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="geneva">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/switherland/geneva.mp4" type="video/mp4">
@@ -106,11 +116,11 @@
     <div class="grid-item swiss">
       <img src="static/images/travel/switherland/interlaken.jpeg" alt="interlaken">
       <div class="overlay">
-        <a class="view-button" href="#interlaken" onclick="openPopup('interlaken')"><strong>Interlaken</strong> | read more</a>
+        <a class="view-button" href="#interlaken" onclick="openPopup('interlaken')"><strong>Interlaken</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="interlaken">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/switherland/interlaken.mp4" type="video/mp4">
@@ -122,11 +132,11 @@
     <div class="grid-item swiss">
       <img src="static/images/travel/switherland/lucern.jpeg" alt="lucern">
       <div class="overlay">
-        <a class="view-button" href="#lucern" onclick="openPopup('lucern')"><strong>Lucern</strong> | read more</a>
+        <a class="view-button" href="#lucern" onclick="openPopup('lucern')"><strong>Lucern</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="lucern">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/switherland/lucern.mp4" type="video/mp4">
@@ -140,12 +150,11 @@
     <div class="grid-item spain">
       <img src="static/images/travel/spain/barcelona.jpeg" alt="barcelona">
       <div class="overlay">
-        <a class="view-button" href="#barcelona" onclick="openPopup('barcelona')"><strong>barcelona</strong> | read more</a>
+        <a class="view-button" href="#barcelona" onclick="openPopup('barcelona')"><strong>barcelona</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="barcelona">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
-        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
+        <p>read travel blog <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html" target=_blank>here</a> and watch travel video <a href="https://youtu.be/s6zR2T9vn2c" data-poptrox="youtube,800x400" target=_blank>here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/spain/barcelona.mp4" type="video/mp4">
         </video>
@@ -156,11 +165,11 @@
     <div class="grid-item spain">
       <img src="static/images/travel/spain/madrid.jpeg" alt="madrid">
       <div class="overlay">
-        <a class="view-button" href="#madrid" onclick="openPopup('madrid')"><strong>madrid</strong> | read more</a>
+        <a class="view-button" href="#madrid" onclick="openPopup('madrid')"><strong>madrid</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="madrid">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/spain/madrid.mp4" type="video/mp4">
@@ -172,11 +181,11 @@
     <div class="grid-item spain">
       <img src="static/images/travel/spain/toledo.jpeg" alt="toledo">
       <div class="overlay">
-        <a class="view-button" href="#toledo" onclick="openPopup('toledo')"><strong>toledo</strong> | read more</a>
+        <a class="view-button" href="#toledo" onclick="openPopup('toledo')"><strong>toledo</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="toledo">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/spain/toledo.mp4" type="video/mp4">
@@ -188,11 +197,11 @@
     <div class="grid-item spain">
       <img src="static/images/travel/spain/sevilla.jpeg" alt="sevilla">
       <div class="overlay">
-        <a class="view-button" href="#sevilla" onclick="openPopup('sevilla')"><strong>sevilla</strong> | read more</a>
+        <a class="view-button" href="#sevilla" onclick="openPopup('sevilla')"><strong>sevilla</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="sevilla">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html" target=_blank>Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html" target=_blank>Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400" target=_blank>here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/spain/sevilla.mp4" type="video/mp4">
@@ -204,11 +213,11 @@
     <div class="grid-item spain">
       <img src="static/images/travel/spain/cordoba.jpeg" alt="cordoba">
       <div class="overlay">
-        <a class="view-button" href="#cordoba" onclick="openPopup('cordoba')"><strong>cordoba</strong> | read more</a>
+        <a class="view-button" href="#cordoba" onclick="openPopup('cordoba')"><strong>cordoba</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="cordoba">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/spain/cordoba.mp4" type="video/mp4">
@@ -222,11 +231,11 @@
     <div class="grid-item england">
       <img src="static/images/travel/england/london.jpeg" alt="london">
       <div class="overlay">
-        <a class="view-button" href="#london" onclick="openPopup('london')"><strong>london</strong> | read more</a>
+        <a class="view-button" href="#london" onclick="openPopup('london')"><strong>london</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="london">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/england/london.mp4" type="video/mp4">
@@ -240,11 +249,11 @@
     <div class="grid-item scotland">
       <img src="static/images/travel/scotland/edinburgh.jpeg" alt="edinburgh">
       <div class="overlay">
-        <a class="view-button" href="#edinburgh" onclick="openPopup('edinburgh')"><strong>edinburgh</strong> | read more</a>
+        <a class="view-button" href="#edinburgh" onclick="openPopup('edinburgh')"><strong>edinburgh</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="edinburgh">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/scotland/edinburgh.mp4" type="video/mp4">
@@ -258,11 +267,11 @@
     <div class="grid-item portugal">
       <img src="static/images/travel/portugal/porto.jpeg" alt="porto">
       <div class="overlay">
-        <a class="view-button" href="#porto" onclick="openPopup('porto')"><strong>porto</strong> | read more</a>
+        <a class="view-button" href="#porto" onclick="openPopup('porto')"><strong>porto</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="porto">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/portugal/porto.mp4" type="video/mp4">
@@ -274,11 +283,11 @@
     <div class="grid-item portugal">
       <img src="static/images/travel/portugal/lisbon.jpeg" alt="lisbon">
       <div class="overlay">
-        <a class="view-button" href="#lisbon" onclick="openPopup('lisbon')"><strong>lisbon</strong> | read more</a>
+        <a class="view-button" href="#lisbon" onclick="openPopup('lisbon')"><strong>lisbon</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="lisbon">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/portugal/lisbon.mp4" type="video/mp4">
@@ -292,11 +301,11 @@
     <div class="grid-item france">
       <img src="static/images/travel/france/paris.jpeg" alt="paris">
       <div class="overlay">
-        <a class="view-button" href="#paris" onclick="openPopup('paris')"><strong>paris</strong> | read more</a>
+        <a class="view-button" href="#paris" onclick="openPopup('paris')"><strong>paris</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="paris">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/france/paris.mp4" type="video/mp4">
@@ -310,11 +319,11 @@
     <div class="grid-item turkey">
       <img src="static/images/travel/turkey/istanbul.jpeg" alt="istanbul">
       <div class="overlay">
-        <a class="view-button" href="#istanbul" onclick="openPopup('istanbul')"><strong>istanbul</strong> | read more</a>
+        <a class="view-button" href="#istanbul" onclick="openPopup('istanbul')"><strong>istanbul</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="istanbul">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/turkey/istanbul.mp4" type="video/mp4">
@@ -328,11 +337,11 @@
     <div class="grid-item austria">
       <img src="static/images/travel/austria/vienna.jpeg" alt="vienna">
       <div class="overlay">
-        <a class="view-button" href="#vienna" onclick="openPopup('vienna')"><strong>vienna</strong> | read more</a>
+        <a class="view-button" href="#vienna" onclick="openPopup('vienna')"><strong>vienna</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="vienna">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/austria/vienna.mp4" type="video/mp4">
@@ -346,11 +355,11 @@
     <div class="grid-item czechia">
       <img src="static/images/travel/czechia/prague.jpeg" alt="prague">
       <div class="overlay">
-        <a class="view-button" href="#prague" onclick="openPopup('prague')"><strong>prague</strong> | read more</a>
+        <a class="view-button" href="#prague" onclick="openPopup('prague')"><strong>prague</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="prague">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/czechia/prague.mp4" type="video/mp4">
@@ -364,17 +373,63 @@
     <div class="grid-item usa">
       <img src="static/images/travel/usa/alaska.jpeg" alt="alaska">
       <div class="overlay">
-        <a class="view-button" href="#alaska" onclick="openPopup('alaska')"><strong>alaska</strong> | read more</a>
+        <a class="view-button" href="#alaska" onclick="openPopup('alaska')"><strong>alaska</strong> | view more</a>
       </div>
       <!-- popup window content -->
       <div class="popup-content" id="alaska">
-        <p>Read more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
         <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
         <video class="videos" center autoplay muted loop>
             <source src="static/videos/travel/usa/alaska.mp4" type="video/mp4">
         </video>
         <button class="close-popup" onclick="closePopup('alaska')">Close</button>
       </div> 
+    </div>
+
+    <div class="grid-item usa">
+      <img src="static/images/travel/usa/dc.jpeg" alt="dc">
+      <div class="overlay">
+        <a class="view-button" href="#dc" onclick="openPopup('dc')"><strong>Washington DC</strong> | view more</a>
+      </div>
+      <!-- popup window content -->
+      <div class="popup-content" id="dc">
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
+        <video class="videos" center autoplay muted loop>
+            <source src="static/videos/travel/usa/dc.mp4" type="video/mp4">
+        </video>
+        <button class="close-popup" onclick="closePopup('dc')">Close</button>
+      </div> 
+    </div>
+
+    <div class="grid-item usa">
+      <img src="static/images/travel/usa/honolulu.jpeg" alt="honolulu">
+      <div class="overlay">
+        <a class="view-button" href="#honolulu" onclick="openPopup('honolulu')"><strong>Honolulu, HI</strong> | view more</a>
+      </div>
+      <!-- popup window content -->
+      <div class="popup-content" id="honolulu">
+        <p>view more about <a href="https://jadenspace.blogspot.com/2023/07/travel-in-spain.html">Travel Blog</a></p>
+        <p>Watch video <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">here</a></p>
+        <video class="videos" center autoplay muted loop>
+            <source src="static/videos/travel/usa/honolulu.mp4" type="video/mp4">
+        </video>
+        <button class="close-popup" onclick="closePopup('honolulu')">Close</button>
+      </div> 
+    </div>
+
+    <div class="grid-item usa">
+      <img src="static/images/travel/usa/oregon.jpeg" alt="oregon">
+      <div class="overlay">
+        <a class="view-button-nocontent"><strong>Oregon</strong></a>
+      </div>
+    </div>
+
+    <div class="grid-item usa">
+      <img src="static/images/travel/usa/new_mexico.jpeg" alt="new mexico">
+      <div class="overlay">
+        <a class="view-button-nocontent"><strong>New Mexico</strong></a>
+      </div>
     </div>
 
   </div>

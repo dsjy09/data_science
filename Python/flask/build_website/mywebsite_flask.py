@@ -11,7 +11,7 @@ def home():
 
 @app.route('/work')
 def work():
-    outputs=medium_articles()
+    outputs=get_medium_articles()
     return render_template("work.html", outputs=outputs)
 
 @app.route('/travel')
