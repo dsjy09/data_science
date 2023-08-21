@@ -191,7 +191,7 @@ h3 {
 
 .aboutsite, .aboutme {
   padding: 1rem;
-  margin-bottom: 1rem; /* Adjust margin to control space between sections */
+  margin-bottom: 0; /* Adjust margin to control space between sections */
   margin-top: 3rem;
   padding-left: 80px;
   padding-right: 80px;
@@ -221,14 +221,14 @@ h3 {
 }
 
 .small-text {
-  font-size: large; /* Set the font size for small text */
+  font-size: 1vw;; /* Set the font size for small text */
   line-height: 1.6;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .large-text {
-  font-size: x-large; /* Set the font size for large text */
+  font-size: 1.8vw; /* Set the font size for large text */
   line-height: 1.6;
   margin-top:0;
   margin-bottom: 2rem;
@@ -391,11 +391,35 @@ opacity: 0;
 display: flex;
 justify-content: center;
 align-items: center;
+flex-wrap: wrap;
+justify-content: space-evenly;
 }
 
 .grid-item:hover .overlay {
   opacity: 1;
   transition: opacity 0.5s ease;
+}
+
+.tooltip2 {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.media-icon:hover .tooltip2 {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* View button */
@@ -418,13 +442,25 @@ align-items: center;
   transition: background-color 0.5s ease;
 }
 
+.view-button-nocontent {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
 /* pop-up window */
 
 .popup-content {
   display:none;
-  background-color:white;
-  width: 80rem;
-  padding: 3px;
+  background-color:black;
+  width:80%;
+  height:90%;
+  padding: 2px;
   border-radius: 5px;
   position: fixed;
   top: 50%;
@@ -433,6 +469,7 @@ align-items: center;
   border:solid 2px black;
   text-align: left;
   z-index: 2;
+  overflow: scroll;
 }
 
 .close-popup {
@@ -644,7 +681,8 @@ align-items: center;
 .popup-job {
   display:none;
   background-color:white;
-  width: 50rem;
+  width: 60%;
+  height:60%;
   padding: 3px;
   border-radius: 5px;
   position: fixed;
@@ -654,6 +692,8 @@ align-items: center;
   border:solid 2px black;
   text-align: left;
   z-index:2;
+  overflow: scroll;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .joblist button {
@@ -872,6 +912,28 @@ margin-top: 10px;
   color: black;
   cursor: pointer; 
   transition: all .2s ease-in-out;
+}
+
+.tooltip {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: rgb(126, 29, 223);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.media-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 /*** Contact page ***/

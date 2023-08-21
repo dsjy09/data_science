@@ -8,6 +8,26 @@
     margin-top:0;
     padding:0;
   }
+  .tooltip {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: rgb(126, 29, 223);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.media-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
 </style>
   <body>
 
@@ -20,13 +40,10 @@
         <h2>To my idol-Roger Federer</h2>
         <ul class="media-list">
           <li>
-            <a href="static/videos/travel/spain/sevilla.mp4" target=_blank class="media-icon"><i class="fa fa-photo-film" aria-hidden="true"></i></a>
-          </li>
-          <li>
-            <a href="https://youtu.be/s6zR2T9vn2c" target=_blank class="media-icon"><i class="fa fa-youtube"></i></a>
-          </li>
-          <li>
-            <a href="https://jadenspace.blogspot.com/2023/08/happy-birthday-roger-federer.html" target=_blank class="media-icon"><i class="fa-brands fa-blogger"></i></a>
+            <a href="https://jadenspace.blogspot.com/2023/08/happy-birthday-roger-federer.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -35,13 +52,10 @@
         <h2>Messi&Argentina-Qatar Worldcup</h2>
         <ul class="media-list">
           <li>
-            <a href="static/videos/travel/spain/sevilla.mp4" target=_blank class="media-icon"><i class="fa fa-photo-film" aria-hidden="true"></i></a>
-          </li>
-          <li>
-            <a href="https://youtu.be/s6zR2T9vn2c" target=_blank class="media-icon"><i class="fa fa-youtube"></i></a>
-          </li>
-          <li>
-            <a href="https://jadenspace.blogspot.com/2022/12/messi-and-argentia-won-qatar-worldcup.html" target=_blank class="media-icon"><i class="fa-brands fa-blogger"></i></a>
+            <a href="https://jadenspace.blogspot.com/2022/12/messi-and-argentia-won-qatar-worldcup.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -50,22 +64,23 @@
         <h2>Indian Wells BNP Open</h2>
         <ul class="media-list">
           <li>
-            <a href="static/videos/travel/spain/sevilla.mp4" target=_blank class="media-icon"><i class="fa fa-photo-film" aria-hidden="true"></i></a>
-          </li>
-          <li>
-            <a href="https://youtu.be/s6zR2T9vn2c" target=_blank class="media-icon"><i class="fa fa-youtube"></i></a>
-          </li>
-          <li>
-            <a href="https://jadenspace.blogspot.com/2023/08/memories-at-indian-wells-bnp-open.html" target=_blank class="media-icon"><i class="fa-brands fa-blogger"></i></a>
+            <a href="https://jadenspace.blogspot.com/2023/08/memories-at-indian-wells-bnp-open.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
+
           </li>
         </ul>
       </div>
       <div class="post" style="transform:rotate(2.382090039306492deg);">
-        <img src="../static/images/blog/korean_food1.jpeg"/>
+        <img src="../static/images/blog/korean_fried_chicken.jpeg"/>
         <h2>Korean Fried Chicken with Rice Cake</h2>
         <ul class="media-list">
           <li>
-            <a href="https://jadenspace.blogspot.com/2023/08/make-korean-fried-chicken-and-rice-cake.html" target=_blank class="media-icon"><i class="fa-brands fa-blogger"></i></a>
+            <a href="https://jadenspace.blogspot.com/2023/08/make-korean-fried-chicken-and-rice-cake.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -74,7 +89,16 @@
         <h2>Ed Sheeran Concert-Metlife</h2>
         <ul class="media-list">
           <li>
-            <a href="https://jadenspace.blogspot.com/2023/08/make-korean-fried-chicken-and-rice-cake.html" target=_blank class="media-icon"><i class="fa-brands fa-blogger"></i></a>
+            <a href="https://jadenspace.blogspot.com/2023/06/ed-sheeran-concert-in-metlife-stadium-nj.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/fjONAgWNKKw" target=_blank class="media-icon">
+              <i class="fa fa-youtube"></i>
+              <span class="tooltip">youtube</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -86,22 +110,45 @@
       </div>
       <div class="post" style="transform:rotate(-1.2116442881634337deg);">
         <img src="../static/images/blog/wimbledone.jpeg"/>
-        <h2>My trip to Wimbledone</h2>
+        <h2>My trip to Wimbledon</h2>
         <ul class="media-list">
           <li>
-            <a href="https://jadenspace.blogspot.com/2023/08/make-korean-fried-chicken-and-rice-cake.html" target=_blank class="media-icon"><i class="fa-brands fa-blogger"></i></a>
+            <a href="https://jadenspace.blogspot.com/2023/07/my-wimbledon-trip.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/Q-bsRShriNU" target=_blank class="media-icon">
+              <i class="fa fa-youtube"></i>
+              <span class="tooltip">youtube</span>
+            </a>
           </li>
         </ul>
       </div>
       <div class="post" style="transform:rotate(3.0836250651156085deg);">
-        <img src="https://picsum.photos/id/120/600/300"/>
-        <h2>Card Title</h2>
-        <p>read more</p>
+        <img src="../static/images/blog/mayday.jpeg"/>
+        <h2>喜欢的歌词-五月天</h2>
+        <ul class="media-list">
+          <li>
+            <a href="https://jadenspace.blogspot.com/2023/08/make-korean-fried-chicken-and-rice-cake.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="post" style="transform:rotate(-0.8549265607958727deg);">
-        <img src="https://picsum.photos/id/140/600/300"/>
-        <h2>Card Title</h2>
-        <p>read more</p>
+        <img src="../static/images/blog/snack1.jpeg"/>
+        <h2>My favorite healthy snack-oatmeal bars</h2>
+        <ul class="media-list">
+          <li>
+            <a href="https://jadenspace.blogspot.com/2023/08/my-favorite-healthy-snack-oatmeal-bars.html" target=_blank class="media-icon">
+              <i class="fa-brands fa-blogger"></i>
+              <span class="tooltip">blog</span>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="post" style="transform:rotate(2.0714792005750287deg);">
         <img src="https://picsum.photos/id/160/600/300"/>
