@@ -1,4 +1,5 @@
 # %%
+## Import libraries
 # import plotly
 # import plotly.graph_objs as go
 
@@ -10,6 +11,51 @@
 # import requests
 # from bs4 import BeautifulSoup
 # import random
+
+## Function to create travel map
+
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import io
+
+def mapplot():  
+    
+    # Turn list into a DataFrame for Plotly Express:
+
+    countries_visited = ['Portugal','United States','Scotland', 'England', 'France', 
+                    'Spain','Turkey','China','Taiwan','Thailand','Austria',
+                    'United Kingdom']
+    
+    data = pd.DataFrame({'Country': countries_visited})
+
+    visited_color = '#9467bd'
+    unvisited_color = 'white'
+    border_color = 'darkgray'
+    ocean_color = 'lightblue'
+
+    fig = px.choropleth(data, 
+                        width=900, height=500,
+                        locations='Country', 
+                        locationmode='country names', 
+                        color_discrete_sequence=[visited_color])
+
+    # Choose a projection, and select map elements and colors:
+    fig.update_geos(projection_type="natural earth", 
+                    showcountries=True, 
+                    countrycolor=border_color,
+                    showland=True, landcolor=unvisited_color, 
+                    showocean=True, oceancolor=ocean_color,
+                    showlakes=False, 
+                    showrivers=False, 
+                    showframe=True)
+
+    # Turn off the legend and format the title:
+    fig.update_layout(showlegend=False,margin=dict(l=0, r=0, t=0, b=0))
+
+    plot_html = fig.to_html(full_html=False)
+
+    return plot_html
 
 # %%
 

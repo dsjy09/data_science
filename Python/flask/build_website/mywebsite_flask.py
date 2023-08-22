@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template
 from functions import *
+import base64
 
 app=Flask(__name__,template_folder='template')
 
@@ -16,7 +17,9 @@ def work():
 
 @app.route('/travel')
 def travel():
-    return render_template("travel.html")
+
+    plot_html=mapplot()
+    return render_template("travel.html",plot_html=plot_html)
 
 @app.route('/blog')
 def blog():

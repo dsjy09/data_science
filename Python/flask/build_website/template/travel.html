@@ -2,6 +2,7 @@
 {%block content%}
 <head>
   <title>travel</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <style>
   /* Add responsive styles as needed */
@@ -38,6 +39,18 @@
   color:white;
 }
 
+.map-container {
+  display:flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+      .map-container {
+        width: 80%;
+        height: 300px;
+      }
+    }
+
 </style>
 <body>
 
@@ -45,9 +58,12 @@
 
   <h1 class="handwrite"> Travel and see the world in my unique way</h1>
 
+  <div class="map-container">{{ plot_html|safe }}</div>
+
   <div class="travelmap">
 
-    <img class='map' src="static/images/travel/other/map.png" alt="Travel Map">
+    <!-- <img class='map' src="static/images/travel/other/map.png" alt="Travel Map"> -->
+    <!-- <img class='map' src="{{ plot_html|safe }}" alt="Travel Map"> -->
 
     <div class="travelpic">
       <h2>Bon voyage</h2>

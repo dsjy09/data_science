@@ -17,14 +17,14 @@ header {
   width: 100%;
 }
 
-.header h1.logo {
-  font-size: 1.7em;
+/* .header h1.logo {
+  font-size: 1.5vw;
   text-transform: uppercase;
   color:rgb(255, 255, 255);
-}
+} */
 
 .header p {
-  font-size: 1.7em;
+  font-size: 1.8vw;
   color:rgb(224, 221, 221);
   text-align: center;
   font-family: 'Pacifico', cursive;
@@ -221,7 +221,7 @@ h3 {
 }
 
 .small-text {
-  font-size: 1vw;; /* Set the font size for small text */
+  font-size: 1vw; /* Set the font size for small text */
   line-height: 1.6;
   margin-top: 0;
   margin-bottom: 0;
@@ -244,11 +244,11 @@ h3 {
 /*** Travel page ***/
 
 h1.handwrite {
-  font-size:40px;
+  font-size:2.5vw;
   color:white;
   text-align: center;
   font-family: 'Borel', cursive;
-  margin-top:2rem;
+  margin-top:3rem;
 }
 
 .travelmap {
