@@ -449,8 +449,11 @@ justify-content: space-evenly;
   color: #333;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
+  text-orientation: center;
+  margin-top:35px;
+  margin-bottom: 0;
 }
 
 /* pop-up window */
@@ -965,8 +968,6 @@ margin-top: 10px;
   justify-content: center;
   align-items: center;
   width:700px;
-  margin-left:0;
-  margin-right: 5rem;
 
 }
 
@@ -1008,10 +1009,7 @@ input[type=send]:hover {
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width:300px;
-  margin-top: 0;
-  height:300px;
-  padding:1rem;
+  align-items: center;
 }
 
 .follow h3 {
@@ -1027,7 +1025,7 @@ input[type=send]:hover {
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  align-items: center;
 }
 
 .social-media-list li a {
@@ -1039,7 +1037,7 @@ input[type=send]:hover {
   display: inline-block;
   height: 60px;
   width: 60px;
-  margin: 10px 3px;
+  margin: 10px 6px;
   line-height: 60px;
   border-radius: 50%;
   color: #fff;
@@ -1049,7 +1047,7 @@ input[type=send]:hover {
 }
 
 .social-media-list li:after {
-  content: '';
+  /*content: '';*/
   position: absolute;
   top: 0;
   left: 0;
